@@ -3,42 +3,10 @@ $light:rgba(194,223,255, 0.2);
 
 * {
   font-family: "Montserrat", sans-serif;
-  // font-weight: lighter;
   box-sizing: border-box;
   margin: 0 auto;
   scroll-behavior: smooth;
 }
-
-.navbar {
-  height: 10vh;
-  position: fixed;
-  text-align: center;
-  text-transform: uppercase;
-  background-color: $primary;
-  width: 100%;
-  padding: 20px;
-  z-index: 1;
-  nav {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    a {
-      color: #000000;
-      text-decoration: none;
-      text-align: center;
-      text-transform: uppercase;
-      transition: 0.5s;
-    }
-    a:hover {
-      color: $primary;
-      text-decoration: underline;
-    }
-    
-  }
-}
-
-// GENERAL STYLING
 
 main {
   h1, h2, h3 {
@@ -49,51 +17,22 @@ main {
     font-weight: lighter;
     padding: 15px;
     text-align: center;
-    // border-top: 3px solid black;
-    // border-bottom: 3px solid black;
-    // background-color: $primary;
   }
   h3 {
     font-weight: bold;
   }
 }
 
-.bg-blue {
-  background-color: $primary;
-  width: 100%;
-  // border: 10px solid #000000;
-}
-
-.bg-white {
-  background-color: #FFFFFF;
-  color: #000000;
-  border: 10px solid $primary;
-  width: 100%;
-}
-
-.bg-black {
-  background-color: #000000;
-  color: #FFFFFF;
-  width: 100%;
-  padding: 20px;
-}
-
-.black-line {
-  height: 5px;
-  background-color: #000000;
-}
-
-// INTRO 
-
 #home {
+  background-color: $primary;
+  width: 100vw;
   min-height: 100vh;
-  padding: 10vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   text-shadow: 2px 2px 2px #FFFFFF;
   min-height: 100vh;
-  padding: 10vh 0;
+  padding: 30vh 0 10vh;
   margin: 0 auto;
   overflow: hidden; 
   white-space: nowrap;
@@ -104,7 +43,7 @@ main {
     padding: 15px;
   }  
   .name{
-    animation: fadein 3s ease-in;
+    animation: fadein 2s ease-in;
   }
   .role {
     opacity: 0;
@@ -114,6 +53,18 @@ main {
     animation-duration: 2s;
     animation-fill-mode: forwards;
   }
+  .under-construction {
+    font-size: 3rem;
+    padding: 10px;
+    border: 4px solid #000000;
+  }
+  .scroll-down {
+    font-size: 1.5rem;
+    text-align: center;
+    i {
+        padding-top: 20px;
+    }
+  }
 }
 
 @keyframes fadein {
@@ -121,338 +72,104 @@ main {
   to { opacity: 1 }
 }
 
-
 #about {
-  padding: 10vh 0;
-  min-height: 100vh;
+  padding: 5vh 5vw;
+  min-height: 80vh;
+  border: 10px solid $primary;
 }
 .bio {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  .profile {
-    flex: 1;
-    transition: width 1.0s linear;
-    margin: 1rem;
-    text-align: end;
-    img {
-      width: 15rem;
-      border-radius: 50%;
+  flex-direction: column;
+  padding: 20px;
+    h3 {
+        font-size: 2rem;
+        margin: 25px 0;
     }
-  }
-  .bio-intro {
-    flex: 2;
-    margin: 2rem;
-    p {
-      line-height: 30px;
-      padding: 8px;
+  .profile {
+      display: flex;
+      margin: 20px;
+
+    img {
+      flex-grow: 1;
+      border-radius: 30%;
+      padding: 20px;
+      margin: 20px;
+    }
+    ul {
+        flex-grow: 3;
+        padding: 40px;
+        font-size: 1.2rem;
+        li {
+            margin: 10px 0;
+        }
     }
   }
 }
+
 .skills {
-  display: flex;
-  max-width: 60%;
-  flex-flow: wrap;
-  justify-content: space-evenly;
-  .icon {
+    border: $primary 5px solid;
+    padding: 10px;
+    h3 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    div {
+        font-size: 1.2rem;
+        padding: 5px;
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.contact {
+    background: $primary;
+    padding: 30px;
+    .contact-details{
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+        display: flex;
+        a {
+            display: flex;
+            flex-direction: row;
+            text-decoration: none;
+            color: black;
+            width: 325px;
+            i {
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+.monkey-invaders {
     display: flex;
     flex-direction: column;
-    width: 70px;
-    height: 70px;
-    margin: 10px 35px;
-    text-align: center;
-    justify-content: center;
-    background-color: $primary;
-    position: relative;
-    transition: all 1.0s linear;
-    .icon-image {
-      font-size: 48px;
-      padding: 2px;
-      transition: all .5s linear;
-    }
-  }
-  .icon-text {
-    font-size: 11px;
-    opacity: 0;
-    transition: opacity .5s;
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .icon:hover .icon-image {
-    transform: translateY(-10px);
-  }
-  .icon:hover .icon-text {
-    opacity: 1;
-  }
-
-}
-
-
-// .profile:hover {
-//   width: 30%;
-// }
-// .profile:hover + .intro-description {
-//   display: block;
-// }
-
-
-// OPTION 1
-// #intro-container:hover #intro-bio {
-//   transform: rotateY(180deg);
-// }
-// .face {
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   backface-visibility: hidden;
-//   text-align: center;
-// }
-// .face.back {
-//   display: block;
-//   transform: rotateY(180deg);
-//   box-sizing: border-box;
-//   padding: 10px;
-//   color: white;
-//   text-align: center;
-//   background-color: #000000;
-//   box-shadow: -5px 5px 5px #aaa;
-// }
-
-
-// EXPERIENCE SECTION - currently not using
-
-// #experience {
-//   min-height: 100vh;
-//   padding: 10vh 0;
-//   margin: auto 0;
-// }
-// OPTION ONE
-// .experience-body {
-//   display: flex;
-//   align-items: center;
-//   flex-direction: column;
-//   text-align: center;
-//   .experience-description {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: row;
-//     width: 80%; 
-//     margin: 20px;
-//     }
-//     .job-content {
-//       padding: 10px;
-//       width: 40%;
-//       .exp-image {
-//         display: flex;
-//         align-items: center;
-//         width: 200px;
-//         height: 200px;
-//         border: 2px solid black;
-//         border-radius: 50%;
-//         img {
-//           width: 100%;
-//           border-radius: 50%;
-//         }
-//       }
-//       h3, h4, h5 {
-//         padding: 5px 0;
-//       }
-//       p {
-//         font-size: 12px;
-//         text-align: center;
-//       }
-//     }
-//   }
-
-// OPTION TWO
-// .experience-body {
-//     display: flex;
-//     align-items: center;
-//     text-align: center;
-//     .experience-description {
-//       display: flex;
-//       justify-content: flex-start;
-//       // align-items: center;
-//       flex-direction: column;
-//       width: 90%; 
-//       height: 100%;
-//       margin: 20px;
-//       }
-//       .job-content {
-//         padding: 10px;
-//         width: 90%;
-//         .exp-image {
-//           display: flex;
-//           flex-direction: column;
-//           align-items: center;
-//           justify-content: center;
-//           width: 200px;
-//           height: 200px;
-//           img {
-//             width: 100%;
-//           }
-//         }
-//         .job-details {
-//           border: 1px black solid;
-//           border-radius: 5px;
-//           background: $light;
-//         }
-//         h3, h4, h5 {
-//           padding: 5px 0;
-//         }
-//         p {
-//           font-size: 12px;
-//           text-align: center;
-//         }
-//       }
-//     }
-
-// .job-blurb {
-//   transition: display 4s ease-in;
-// }
-// .experience-description:hover .job-blurb {
-//   display: block;
-// }
-
-
-
-// PROJECTS SECTION
-
-#projects {
-  padding: 10vh 0;
-  min-height: 100vh;
-}
-
-.project-images {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-flow: wrap;
-  .project {
-    width: 40%;
-    background: $light;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 2rem 0 1rem;
-    margin: 1rem;
-    transition: all .2s ease-in-out;
-  }
-  img {
-    width: 80%;
-    border: 1px solid black;
-    object-fit: cover;
-  }
-}
-.project:hover {
-  transform: scale(1.1)
-}
-
-.project-block {
-  width: 80%;
-  height: 80%;
-  padding: 20px;
-  margin: 40px auto;
-  border: 5px solid black;
-  opacity: 1;
-  display: flex;
-  align-items: center;
-  
-  &.modal {
-    max-width: 800px;
-    width: 90%;
-    height: 90%;
-  }
-  h3 {
-    font-size: 38px;
-    padding: 10px;
-  }
-  h4 {
-    font-size: 20px;
-    padding: 10px;
-    text-transform: none;
-  }
-  .project-skills {
-    padding: 10px;
-    margin: 10px0;
-
-  }
-  .project-content {
-    display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    img {
-      width: 45%;
-    }
-    p {
-      width: 50%;
-    }
-  }
-  .project-links {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 15px;
-    a {
-      text-decoration: none;
-      border: 1px solid black;
-      border-radius: 5%;
-      padding: 5px;
-      color: black;
-      background: $primary;
-      transition: all .2s ease-in-out;
-    }
-    a:hover {
-      transform: scale(1.1)
-    }
-  }
-}
+    justify-content: center;
+    margin-bottom: 10vh;
 
-
-
-// CONTACT SECTION
-
-#contact {
-  height: 100vh;
-  width: 100%;
-}
-
-.contact-block {
-  // background-color: $primary;
-  background-image: url("../images/contact.jpeg");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;
-  padding: 10px;
-
-  h2 {
-    padding: 10vh 0;
-  }
-  strong {
-    font-weight: bold;
-  }
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: auto;
-  .contact-details{
-    width: 100%;
-    margin: 10px 0;
-    padding: 15px;
-    display: flex;
-    a {
-      text-decoration: none;
-      color: black;
-      width: 325px;
-      i {
-        font-size: 3rem;
-      }
-    a:nth-child(1) {
-      width: 20px;
+    .monkey-invaders-title {
+        font-size: 1.2rem;
+        padding: 40px;
     }
+
+    .project {
+        width: 80%;
+        background: $light;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 2rem 0 1rem;
+        margin: 1rem;
+        transition: all .2s ease-in-out;
+        img {
+            display: flex;
+            width: 80%;
+            border: 1px solid black;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
     }
-  }
 }
